@@ -52,8 +52,7 @@ Before you begin, ensure you have the following installed:
 
 ```
 
-git clone https://github.com/yourusername/ecourts-downloader.git
-cd ecourts-downloader
+https://github.com/dineshroyal9121687814/Ecourts_scrapper.git
 
 ```
 
