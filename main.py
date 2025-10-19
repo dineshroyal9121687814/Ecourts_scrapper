@@ -1,7 +1,5 @@
 import streamlit as st
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
+import undetected_chromedriver as uc
 import time
 import re
 import logging
@@ -31,21 +29,19 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<div class="main-title">⚖️ eCourts Case List Downloader</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">⚖️ eCourts Cause List Downloader</div>', unsafe_allow_html=True)
 
 # ==================== DRIVER ====================
 def create_new_driver():
-    """Create Chrome driver instance"""
+    """Create Chrome driver instance using undetected-chromedriver"""
     try:
-        options = webdriver.ChromeOptions()
+        options = uc.ChromeOptions()
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--disable-gpu")
         options.add_argument("--window-size=1920,1080")
-        options.add_argument("--headless")
-        options.add_experimental_option('excludeSwitches', ['enable-logging'])
-        service = ChromeService(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=options)
+        options.add_argument("--headless=new")  # Use new headless mode
+        driver = uc.Chrome(options=options, version_main=None)
         driver.set_page_load_timeout(TIMEOUT_LONG)
         driver.implicitly_wait(2)
         return driver
