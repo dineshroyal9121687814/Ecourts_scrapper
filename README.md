@@ -6,11 +6,6 @@ Based on the best practices from the search results, here's a comprehensive READ
 ```markdown
 # ⚖️ eCourts Case List Downloader
 
-![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
-![Streamlit](https://img.shields.io/badge/streamlit-1.28+-red.svg)
-![Selenium](https://img.shields.io/badge/selenium-4.0+-green.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-
 A powerful, automated Streamlit application to download case lists from eCourts India (https://services.ecourts.gov.in) with support for bulk downloads, automatic CAPTCHA solving, and professional PDF generation.
 
 ## 📋 Table of Contents
